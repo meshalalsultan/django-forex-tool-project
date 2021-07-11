@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1>
+        Predect Stock Price 
+    </h1>
+    <p>
+        From 60 Day's We will predect tommorow stock price of your choise
+        please fill the form and find your predection !!
+    </p>
+    <br><br><div>
+        <br>
+        <center>
+            <form action="{% url 'social_reco' %}"  >
+                {% csrf_token %}
+                Stock Name
+                <input required type="text" name='symbol' placeholder="Enter Stock Name"><br><br>
+                Start Date
+                <input type="date" name="startDate" placeholder="From Date"><br><br>
+                End Date
+                <input  type="date" name="endDate" placeholder="To Date"><br><br>
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
+
+            
+
+        </center>
+
+    </div>
+    <br/>
+    <br>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<body>
+    {% extends 'blank.html' %}
+    {% block body %}
+    <h1>
+        Predect Stock Price 
+    </h1>
+    <p>
+        From 60 Day's We will predect tommorow stock price of your choise
+        please fill the form and find your predection !!
+    </p>
+    <br><br><div>
+        <br>
+        <center>
+            <form action="{% url 'pred_price' %}"  >
+                <div class="form-group">
+                    <div class="form-control-wrap">
+
+                {% csrf_token %}
+                <label class="form-label">Stock Name</label>
+                <input required type="text" name='stockName' placeholder="Enter Stock Name"><br><br>
+                <label class="form-label">Country</label>
+                <input required type="text" name='country' placeholder="Enter Country Name">
+                <br><br>
+
+                <label class="form-label">Start Date</label>
+                <input required type="date" name="startDate" placeholder="From Date"><br><br>
+                <label class="form-label">End Date</label>
+                <input required type="date" name="endDate" placeholder="To Date"><br><br>
+
+                <br><br>
+                <input type="submit" value="Submit" class="btn btn-primary">
+
+
+            </form>
+
+            
+
+        </center>
+
+    </div>
+    <br/>
+    <br>
+    {% endblock %}
+</body>
+</html>

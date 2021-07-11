@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="{% static 'assets/css/dashlite.css' %}">
     <link id="skin-default" rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+    {% block stylesheets %}{% endblock stylesheets %}
 </head>
 
 <body class="nk-body bg-lighter npc-default has-sidebar ">
@@ -46,9 +47,9 @@
                                     <h6 class="overline-title text-primary-alt">Use-Case Preview</h6>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="html/ecommerce/index.html" class="nk-menu-link">
+                                    <a href= "{% url 'pred_price' %}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-bag"></em></span>
-                                        <span class="nk-menu-text">E-Commerce Panel</span><span class="nk-menu-badge">HOT</span>
+                                        <span class="nk-menu-text">Predect Stock Price</span><span class="nk-menu-badge">HOT</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
@@ -832,9 +833,11 @@
 
     <!-- app-root @e -->
     <!-- JavaScript -->
+    {% block javascripts %}
     <script src="{% static 'assets/js/bundle.js' %}"></script>
     <script src="{% static 'assets/js/scripts.js' %}"></script>
     <script src="{% static 'assets/js/charts/chart-ecommerce.js' %}"></script>
+    {% endblock javascripts %}
 </body>
 
 </html>
